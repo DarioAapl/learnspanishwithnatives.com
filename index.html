@@ -1,428 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn Spanish with small-group cohorts taught by native speakers from Spain and Latin America. Live on Zoom, capped at 8 students, 8 weeks.">
-  <title>Learn Spanish with Natives — Group Classes with Native Speakers</title>
-  <link rel="icon" href="assets/img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Spanish with Natives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #FAF6EF;
+      color: #6B0F0F;
+      font-family: 'Fraunces', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 640px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-weight: 300;
+      font-style: italic;
+      opacity: 0.7;
+      letter-spacing: 0.04em;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ═══ Navigation ════════════════════════════════ -->
-  <header class="site-nav" id="site-nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Learn Spanish with Natives — Home">
-        <img src="assets/img/logo.png" alt="Learn Spanish with Natives" width="160" height="40"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span class="nav-logo-text">Learn Spanish<small>with Natives</small></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="pricing.html" class="btn btn--primary nav-cta">Join a cohort</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="pricing.html" class="btn btn--primary" style="width:100%;justify-content:center;">Join a cohort</a>
+  <div class="container">
+    <h1>Learn Spanish with actual Spaniards.</h1>
+    <p>Coming soon.</p>
   </div>
-
-  <main>
-
-    <!-- ═══ 1. Hero ════════════════════════════════ -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <span class="label">Small groups · Native teachers · Real results</span>
-          <h1 id="hero-heading">Learn Spanish with <em>actual</em> Spaniards.</h1>
-          <p class="lead">Join a cohort of 6–8 learners and meet twice a week with a native Spanish teacher. Eight weeks later, you'll hold a real conversation — not just recognise words on a menu.</p>
-          <div class="hero-actions">
-            <a href="#cohorts" class="btn btn--primary btn--lg">See upcoming cohorts</a>
-            <a href="#how-it-works" class="btn btn--outline btn--lg">How it works</a>
-          </div>
-        </div>
-        <div class="hero-visual fade-up" aria-hidden="true">
-          <div class="hero-img-wrap">
-            <img src="assets/img/hero.jpg" alt="A small group of students in an online Spanish class with a native teacher from Spain" loading="lazy"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="hero-placeholder" style="display:none">
-              <span class="hero-placeholder-icon">🎓</span>
-              <p>Hero image placeholder</p>
-            </div>
-          </div>
-          <div class="hero-badge">
-            <span class="hero-badge-icon">🌍</span>
-            <div class="hero-badge-text">
-              <strong>30+ countries</strong>
-              Learning together
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 2. Social Proof Strip ══════════════════ -->
-    <div class="social-proof" role="complementary" aria-label="Social proof">
-      <div class="container social-proof-inner">
-        <p class="social-proof-text">Trusted by learners in <strong>30+ countries</strong> — from London to São Paulo, Berlin to Toronto</p>
-        <div class="logo-row" aria-label="Partner and press logos">
-          <div class="logo-placeholder" style="width:80px" aria-hidden="true"></div>
-          <div class="logo-placeholder" style="width:100px" aria-hidden="true"></div>
-          <div class="logo-placeholder" style="width:72px" aria-hidden="true"></div>
-          <div class="logo-placeholder" style="width:90px" aria-hidden="true"></div>
-          <div class="logo-placeholder" style="width:76px" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ 3. How It Works ════════════════════════ -->
-    <section class="how-it-works" id="how-it-works" aria-labelledby="how-heading">
-      <div class="container">
-        <div class="section-header section-header--center fade-up">
-          <span class="label">Simple by design</span>
-          <h2 id="how-heading">How it works</h2>
-          <p class="lead">Three steps. Eight weeks. One language you'll actually use.</p>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card fade-up">
-            <div class="step-header">
-              <div class="step-num" aria-hidden="true">1</div>
-              <span class="step-icon" aria-hidden="true">🎯</span>
-            </div>
-            <h3>Join a cohort at your level</h3>
-            <p>We match you to a group of 6–8 students at your exact level — Beginner, Intermediate, or Conversational. Groups stay small deliberately, so every session is personal and everyone gets time to speak.</p>
-          </div>
-          <div class="step-card fade-up">
-            <div class="step-header">
-              <div class="step-num" aria-hidden="true">2</div>
-              <span class="step-icon" aria-hidden="true">💻</span>
-            </div>
-            <h3>Meet twice a week with a native teacher</h3>
-            <p>Live on Zoom, twice a week, with a native from Spain or Latin America. Your teacher brings the culture, the humour, and the real vocabulary that no app or textbook can teach. Class is always interactive, never a lecture.</p>
-          </div>
-          <div class="step-card fade-up">
-            <div class="step-header">
-              <div class="step-num" aria-hidden="true">3</div>
-              <span class="step-icon" aria-hidden="true">🗣️</span>
-            </div>
-            <h3>Graduate speaking real Spanish</h3>
-            <p>Eight weeks of consistent, guided practice builds the habit. By the final session, you won't just know Spanish — you'll use it. Most students join the next level up within a few weeks of graduating.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 4. Why Native Teachers ═════════════════ -->
-    <section class="why-natives" aria-labelledby="why-heading">
-      <div class="container why-inner">
-        <div class="why-text fade-up">
-          <span class="label">Why we do it this way</span>
-          <h2 id="why-heading">A native teacher changes everything.</h2>
-          <p>There's a reason fluent speakers sound different from classroom learners. It's not just accent — it's rhythm, humour, and the thousand small choices that make a sentence sound natural rather than translated.</p>
-          <p>Our teachers grew up with the language. They know how people actually talk, which phrases date you as a tourist, and what makes locals laugh. That's something no algorithm can replicate, and no textbook was written to teach.</p>
-          <a href="about.html" class="btn btn--outline">Meet the teachers</a>
-        </div>
-        <div class="why-testimonial fade-up">
-          <div class="testimonial-card">
-            <blockquote>
-              Before this, I could conjugate verbs perfectly and still freeze whenever a Spanish person started talking to me. After two cohorts, I had a 40-minute conversation with my partner's family in Valencia. That's what I was paying for.
-            </blockquote>
-            <div class="testimonial-meta">
-              <div class="testimonial-avatar" aria-hidden="true">ER</div>
-              <div>
-                <div class="testimonial-name">Emma R.</div>
-                <div class="testimonial-location">London, United Kingdom</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 5. Cohort Preview ═══════════════════════ -->
-    <section class="cohort-preview" id="cohorts" aria-labelledby="cohorts-heading">
-      <div class="container">
-        <div class="section-header section-header--center fade-up">
-          <span class="label">Upcoming cohorts</span>
-          <h2 id="cohorts-heading">Find your level</h2>
-          <p class="lead">New cohorts start every four to six weeks. Most groups fill up in the week before they open — book early to guarantee your spot.</p>
-        </div>
-        <div class="cohort-grid">
-
-          <article class="cohort-card fade-up">
-            <span class="cohort-level">Beginner · A1–A2</span>
-            <h3>Starting from zero</h3>
-            <p>From "hola" to holding a basic conversation. This cohort covers greetings, numbers, everyday vocabulary, present tense, and the fundamentals of asking and answering questions naturally.</p>
-            <div class="cohort-meta">
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">📅</span>
-                <span>Next start: <strong>5 May 2026</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">⏱</span>
-                <span>Duration: <strong>8 weeks</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">👥</span>
-                <span>Group size: <strong>max 8 students</strong></span>
-              </div>
-            </div>
-            <p class="spots-left">3 spots remaining</p>
-            <a href="pricing.html" class="btn btn--primary">Reserve your spot</a>
-          </article>
-
-          <article class="cohort-card cohort-card--featured fade-up">
-            <span class="cohort-badge">Most popular</span>
-            <span class="cohort-level">Intermediate · B1–B2</span>
-            <h3>Closing the gap</h3>
-            <p>You know the grammar. You just don't sound natural yet. This cohort closes the gap between textbook Spanish and the real thing — idioms, flow, cultural references, and thinking faster.</p>
-            <div class="cohort-meta">
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">📅</span>
-                <span>Next start: <strong>12 May 2026</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">⏱</span>
-                <span>Duration: <strong>8 weeks</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">👥</span>
-                <span>Group size: <strong>max 8 students</strong></span>
-              </div>
-            </div>
-            <p class="spots-left">5 spots remaining</p>
-            <a href="pricing.html" class="btn btn--primary">Reserve your spot</a>
-          </article>
-
-          <article class="cohort-card fade-up">
-            <span class="cohort-level">Conversational · C1+</span>
-            <h3>Thinking in Spanish</h3>
-            <p>Stop translating in your head. This cohort is for learners who want to think, argue, joke, and tell stories in Spanish — not in English first. Debate, storytelling, and nuanced vocabulary.</p>
-            <div class="cohort-meta">
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">📅</span>
-                <span>Next start: <strong>19 May 2026</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">⏱</span>
-                <span>Duration: <strong>8 weeks</strong></span>
-              </div>
-              <div class="cohort-meta-item">
-                <span class="icon" aria-hidden="true">👥</span>
-                <span>Group size: <strong>max 8 students</strong></span>
-              </div>
-            </div>
-            <p class="spots-left">2 spots remaining</p>
-            <a href="pricing.html" class="btn btn--primary">Reserve your spot</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 6. Testimonials ═════════════════════════ -->
-    <section class="testimonials" aria-labelledby="testi-heading">
-      <div class="container">
-        <div class="section-header section-header--center fade-up">
-          <span class="label">From our students</span>
-          <h2 id="testi-heading">Don't take our word for it</h2>
-        </div>
-        <div class="testimonials-grid">
-
-          <article class="testi-card fade-up">
-            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>I've tried every app going. This is the first thing that actually made me confident enough to speak. The small group matters more than I expected — you can't hide, and that turns out to be exactly what you need.</blockquote>
-            <div class="testimonial-meta">
-              <div class="testimonial-avatar" aria-hidden="true">ER</div>
-              <div>
-                <div class="testimonial-name">Emma R.</div>
-                <div class="testimonial-location">London, United Kingdom</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testi-card fade-up">
-            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>My teacher is from Málaga and she explains things in a way that makes cultural sense, not just grammatical sense. The idioms alone were worth the price of the whole cohort.</blockquote>
-            <div class="testimonial-meta">
-              <div class="testimonial-avatar" aria-hidden="true">LK</div>
-              <div>
-                <div class="testimonial-name">Lukas K.</div>
-                <div class="testimonial-location">Hamburg, Germany</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testi-card fade-up">
-            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>I joined the C1 cohort after years of studying alone. The group pushed me in ways I never would have pushed myself. Three months later I moved to Barcelona. Coincidence? Probably not.</blockquote>
-            <div class="testimonial-meta">
-              <div class="testimonial-avatar" aria-hidden="true">PS</div>
-              <div>
-                <div class="testimonial-name">Priya S.</div>
-                <div class="testimonial-location">Toronto, Canada</div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 7. FAQ ═══════════════════════════════════ -->
-    <section class="faq" id="faq" aria-labelledby="faq-heading">
-      <div class="container">
-        <div class="section-header section-header--center fade-up">
-          <span class="label">Frequently asked</span>
-          <h2 id="faq-heading">Your questions, answered</h2>
-        </div>
-        <div class="faq-list fade-up">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-              What level do I need to join?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-q1">
-              We offer three entry levels: Beginner (A1–A2), Intermediate (B1–B2), and Conversational (C1+). If you're unsure where you fit, send us a message and we'll help you figure it out before you book. Placing yourself at the right level makes a meaningful difference to how much you get from the cohort.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-              How big are the cohorts?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-2" role="region">
-              Maximum 8 students. We've found this is the sweet spot: small enough that everyone gets real speaking time every session, large enough to have interesting conversations with different voices. We don't run larger groups. Ever.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-              What if I miss a class?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-3" role="region">
-              Sessions are recorded so you can catch up if something comes up. That said, we'd encourage you to attend live whenever you can — the conversation is where the real learning happens, and watching a recording is not the same as being in the room.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-              Are teachers from Spain or Latin America?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-4" role="region">
-              Both. Each cohort listing names the teacher and their background, so you can choose based on the accent and dialect that matters most for your goals. Planning a trip to Mexico? Studying for a role in Madrid? We've got both covered.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-              Is there homework, or is it all live classes?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-5" role="region">
-              Short weekly exercises — about 20 minutes between sessions — help you consolidate what you practiced in class. Nothing that requires a textbook. Just enough to keep the language active in your brain between calls.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-              What happens after I graduate?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq-6" role="region">
-              Most students join the next level up within a month or two. We also keep all alumni in a shared community, send a monthly conversation challenge, and occasionally run informal social events for ongoing practice. Spanish doesn't have to stop when the cohort ends.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ 8. CTA Banner ══════════════════════════ -->
-    <section class="cta-banner" aria-labelledby="cta-heading">
-      <div class="container">
-        <div class="cta-banner-inner fade-up">
-          <h2 id="cta-heading">Ready to actually speak Spanish?</h2>
-          <p>The next cohort starts in a few weeks. Spots fill quickly, and once a group is full, it's full.</p>
-          <div class="cta-banner-actions">
-            <a href="pricing.html" class="btn btn--ghost btn--lg">See all upcoming cohorts</a>
-            <a href="contact.html" class="btn btn--cream btn--lg">Ask a question first</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══ Footer ══════════════════════════════════ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo-text">Learn Spanish<small>with Natives</small></div>
-          <p>Teaching Spanish since 2019. Built on conversation, not curriculum. Small groups, native teachers, real results.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Cohorts</h4>
-          <ul>
-            <li><a href="pricing.html">Beginner A1–A2</a></li>
-            <li><a href="pricing.html">Intermediate B1–B2</a></li>
-            <li><a href="pricing.html">Conversational C1+</a></li>
-            <li><a href="contact.html">Custom enquiries</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Stay in the loop</h4>
-          <p style="font-size:0.875rem;color:rgba(250,246,239,0.5);margin-bottom:1rem;max-width:none;">Get notified when new cohorts open. No newsletters, just cohort announcements.</p>
-          <form class="newsletter-form" aria-label="Newsletter signup" novalidate>
-            <input type="email" placeholder="your@email.com" aria-label="Your email address" autocomplete="email">
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Learn Spanish with Natives. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>

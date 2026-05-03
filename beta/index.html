@@ -80,6 +80,8 @@
     .hero {
       text-align: center;
       padding: 96px 0 80px;
+      background: var(--orange);
+      color: #fff;
     }
     .hero h1 {
       font-family: 'Fraunces', Georgia, serif;
@@ -89,13 +91,28 @@
       letter-spacing: -0.02em;
       margin: 0 auto 20px;
       max-width: 780px;
-      color: var(--dark);
+      color: #fff;
     }
     .hero p.sub {
       font-size: 19px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.92);
       max-width: 600px;
       margin: 0 auto 36px;
+    }
+    .hero .btn {
+      background: #fff;
+      color: var(--orange);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .hero .btn:hover {
+      background: var(--cream);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+    .hero .text-link {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .hero .text-link:hover {
+      color: #fff;
     }
 
     .btn {

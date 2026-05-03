@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Spanish with Natives</title>
+  <meta name="description" content="1-on-1 Spanish lessons with native teachers from Spain and Latin America. Book your first class today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F39200;
+      --orange-hover: #d97f00;
+      --dark: #1A1A1A;
+      --muted: #5a5a5a;
+      --bg: #ffffff;
+      --cream: #FFF8EE;
+      --border: #ececec;
+      --shadow: 0 6px 24px rgba(26, 26, 26, 0.06);
+      --shadow-hover: 0 12px 36px rgba(26, 26, 26, 0.1);
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--dark);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo img {
+      display: block;
+      max-width: 180px;
+      height: auto;
+    }
+    .signin {
+      font-weight: 500;
+      color: var(--dark);
+      font-size: 15px;
+      transition: color .15s ease;
+    }
+    .signin:hover { color: var(--orange); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 96px 0 80px;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0 auto 20px;
+      max-width: 780px;
+      color: var(--dark);
+    }
+    .hero p.sub {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 16px 28px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 4px 14px rgba(243, 146, 0, 0.25);
+    }
+    .btn:hover {
+      background: var(--orange-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(243, 146, 0, 0.32);
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .15s ease;
+    }
+    .text-link:hover { color: var(--orange); }
+
+    /* Section */
+    section { padding: 80px 0; }
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 auto 56px;
+      max-width: 560px;
+    }
+
+    /* Levels */
+    .levels {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .card {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card.featured {
+      background: var(--cream);
+      border-color: rgba(243, 146, 0, 0.25);
+    }
+    .badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .card h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 28px;
+      margin: 0 0 6px;
+      letter-spacing: -0.01em;
+    }
+    .card .level-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 24px;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .card ul li {
+      padding: 8px 0;
+      color: var(--dark);
+      font-size: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .card ul li:last-child { border-bottom: none; }
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin: 0 0 24px;
+    }
+    .price .amount {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 44px;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+    .price .per {
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .card .btn { width: 100%; text-align: center; }
+
+    /* How it works */
+    .how {
+      background: var(--cream);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .step {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .step .icon {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .step h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 22px;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* Trust strip */
+    .trust {
+      padding: 56px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+    footer a {
+      color: var(--muted);
+      margin-left: 16px;
+      transition: color .15s ease;
+    }
+    footer a:hover { color: var(--orange); }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .steps { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 960px) {
+      .levels { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 120px 0 96px; }
+      .hero h1 { font-size: 64px; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 64px 0 56px; }
+      .hero h1 { font-size: 38px; }
+      .hero p.sub { font-size: 17px; }
+      .section-title { font-size: 28px; }
+      section { padding: 64px 0; }
+      .card { padding: 28px 24px; }
+      .price .amount { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Learn Spanish with Natives">
+        <img src="../assets/img/logo.png" alt="Learn Spanish with Natives" />
+      </a>
+      <a href="#" class="signin">Sign in</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Learn Spanish with native speakers.</h1>
+        <p class="sub">1-on-1 lessons with teachers from Spain and Latin America. Book your first class today.</p>
+        <a href="#levels" class="btn">Choose your level</a>
+        <div>
+          <a href="#how" class="text-link">How it works →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="levels">
+      <div class="container">
+        <h2 class="section-title">Choose your level</h2>
+        <p class="section-sub">Two simple plans. Both with native teachers, both flexible.</p>
+
+        <div class="levels">
+          <div class="card">
+            <h3>Basic</h3>
+            <p class="level-sub">A1 – A2 · For beginners and early learners</p>
+            <ul>
+              <li>4 classes per month</li>
+              <li>1-on-1 with a native teacher</li>
+              <li>Flexible scheduling</li>
+            </ul>
+            <div class="price">
+              <span class="amount">€350</span>
+              <span class="per">/month</span>
+            </div>
+            <a href="#" class="btn">Book a teacher</a>
+          </div>
+
+          <div class="card featured">
+            <span class="badge">Most popular</span>
+            <h3>Intermediate</h3>
+            <p class="level-sub">B1 – B2 · For confident speakers</p>
+            <ul>
+              <li>8 classes per month</li>
+              <li>1-on-1 with a native teacher</li>
+              <li>Flexible scheduling</li>
+              <li>Conversation focus</li>
+            </ul>
+            <div class="price">
+              <span class="amount">€600</span>
+              <span class="per">/month</span>
+            </div>
+            <a href="#" class="btn">Book a teacher</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub">From signup to your first class in minutes.</p>
+
+        <div class="steps">
+          <div class="step">
+            <span class="icon" aria-hidden="true">🎯</span>
+            <h4>Pick your level</h4>
+            <p>Choose Basic or Intermediate based on where you are today.</p>
+          </div>
+          <div class="step">
+            <span class="icon" aria-hidden="true">👩‍🏫</span>
+            <h4>Choose a teacher</h4>
+            <p>Browse native teachers and pick the one that fits you best.</p>
+          </div>
+          <div class="step">
+            <span class="icon" aria-hidden="true">💬</span>
+            <h4>Start learning</h4>
+            <p>Book your first 1-on-1 class and begin speaking right away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container">
+        Native teachers from Spain, Mexico, Colombia, Argentina.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Learn Spanish with Natives
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -53,12 +53,13 @@
       position: sticky;
       top: 0;
       z-index: 50;
+      box-shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 4px 14px rgba(26, 26, 26, 0.06);
       transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
     header.scrolled {
       background: var(--orange);
       border-bottom-color: transparent;
-      box-shadow: 0 4px 16px rgba(243, 146, 0, 0.25);
+      box-shadow: 0 6px 20px rgba(243, 146, 0, 0.32);
     }
     header.scrolled .signin {
       background: #fff;
@@ -96,8 +97,16 @@
     .hero {
       text-align: center;
       padding: 96px 0 80px;
-      background: var(--orange);
       color: #fff;
+      position: relative;
+      overflow: hidden;
+      background-color: #e88a00;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.22), transparent 55%),
+        radial-gradient(circle at 88% 90%, rgba(110, 55, 0, 0.30), transparent 55%),
+        linear-gradient(135deg, #c87100 0%, #F39200 55%, #e88a00 100%);
+      background-size: 180px 180px, auto, auto, auto;
     }
     .hero h1 {
       font-family: 'Fraunces', Georgia, serif;
@@ -142,13 +151,30 @@
       border-radius: var(--radius-sm);
       border: none;
       cursor: pointer;
-      transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+      transition: background .2s ease, transform .25s cubic-bezier(.34, 1.4, .64, 1), box-shadow .25s ease;
       box-shadow: 0 4px 14px rgba(243, 146, 0, 0.25);
+      will-change: transform;
     }
     .btn:hover {
       background: var(--orange-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(243, 146, 0, 0.32);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 24px rgba(243, 146, 0, 0.38);
+    }
+    .btn:active {
+      transform: translateY(-1px) scale(0.99);
+      transition: transform .08s ease;
+    }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10); }
+      50%      { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22); }
+    }
+    .hero .btn {
+      animation: ctaPulse 2.6s ease-in-out infinite;
+    }
+    .hero .btn:hover { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .hero .btn { animation: none; transition: none; }
+      .btn:hover { transform: none; }
     }
 
     .text-link {

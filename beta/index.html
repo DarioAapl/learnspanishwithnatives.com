@@ -50,6 +50,13 @@
       padding: 14px 0;
       background: #fff;
       border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: box-shadow .2s ease;
+    }
+    header.scrolled {
+      box-shadow: 0 4px 16px rgba(26, 26, 26, 0.08);
     }
     .header-inner {
       display: flex;
@@ -329,7 +336,7 @@
   <header>
     <div class="container header-inner">
       <a href="#" class="logo" aria-label="Learn Spanish with Natives">
-        <img src="../assets/img/logo.png" alt="Learn Spanish with Natives" />
+        <img id="logo-img" src="../assets/img/logo1.png" alt="Learn Spanish with Natives" />
       </a>
       <a href="#" class="signin">Sign in</a>
     </div>
@@ -426,6 +433,32 @@
       <a href="#">Privacy</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector('header');
+      var logoImg = document.getElementById('logo-img');
+      var topSrc = '../assets/img/logo1.png';
+      var scrolledSrc = '../assets/img/logo.png';
+      var threshold = 40;
+
+      // Preload the swap target so the switch is instant.
+      var preload = new Image();
+      preload.src = scrolledSrc;
+
+      function onScroll() {
+        var scrolled = window.scrollY > threshold;
+        header.classList.toggle('scrolled', scrolled);
+        var nextSrc = scrolled ? scrolledSrc : topSrc;
+        if (!logoImg.src.endsWith(nextSrc.replace('../', ''))) {
+          logoImg.src = nextSrc;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 
 </body>
 </html>

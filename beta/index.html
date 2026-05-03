@@ -25,6 +25,8 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -47,50 +49,74 @@
 
     /* Header */
     header {
-      padding: 8px 0;
-      background: #fff;
-      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      background: transparent;
+      border-bottom: 1px solid transparent;
       position: sticky;
       top: 0;
       z-index: 50;
-      box-shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 4px 14px rgba(26, 26, 26, 0.06);
-      transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
     }
     header.scrolled {
-      background: var(--orange);
-      border-bottom-color: transparent;
-      box-shadow: 0 6px 20px rgba(243, 146, 0, 0.32);
-    }
-    header.scrolled .signin {
-      background: #fff;
-      color: var(--orange);
-    }
-    header.scrolled .signin:hover {
-      background: var(--cream);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 2px rgba(26, 26, 26, 0.03), 0 4px 16px rgba(26, 26, 26, 0.04);
     }
     .header-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
     .logo img {
       display: block;
       max-width: 110px;
       height: auto;
     }
+
+    /* Center nav links */
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+    .nav-links a:hover { opacity: 0.75; }
+    header.scrolled .nav-links a { color: var(--dark); }
+    header.scrolled .nav-links a:hover { color: var(--orange); opacity: 1; }
+
+    /* Enroll button (default = transparent state: white bg, orange text) */
     .signin {
       font-weight: 600;
-      color: #fff;
-      background: var(--orange);
+      color: var(--orange);
+      background: #fff;
       font-size: 13px;
-      padding: 6px 16px;
+      padding: 8px 18px;
       border-radius: 999px;
-      transition: background .15s ease, transform .15s ease;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
     .signin:hover {
-      background: var(--orange-hover);
+      background: var(--cream);
       transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+    /* Scrolled = frosted: orange button, white text */
+    header.scrolled .signin {
+      background: var(--orange);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(243, 146, 0, 0.25);
+    }
+    header.scrolled .signin:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 4px 14px rgba(243, 146, 0, 0.35);
     }
 
     /* Hero */
@@ -227,19 +253,23 @@
     .card {
       position: relative;
       background: #fff;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: var(--radius);
-      padding: 36px 32px;
-      box-shadow: var(--shadow);
-      transition: transform .2s ease, box-shadow .2s ease;
+      padding: 44px 36px;
+      box-shadow: 0 4px 24px rgba(234, 88, 12, 0.08);
+      transition: transform 0.25s cubic-bezier(.34, 1.2, .64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
     }
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(234, 88, 12, 0.16);
     }
     .card.featured {
-      background: var(--cream);
-      border-color: rgba(243, 146, 0, 0.25);
+      background: #fff;
+      border: 2px solid #F97316;
+      box-shadow: 0 8px 32px rgba(249, 115, 22, 0.18);
+    }
+    .card.featured:hover {
+      box-shadow: 0 16px 44px rgba(249, 115, 22, 0.28);
     }
     .badge {
       position: absolute;
@@ -301,6 +331,7 @@
       background: var(--cream);
     }
     .steps {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
@@ -308,17 +339,31 @@
       margin: 0 auto;
     }
     .step {
+      position: relative;
       background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: var(--radius);
-      padding: 32px 28px;
+      padding: 36px 28px;
       text-align: center;
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 24px rgba(234, 88, 12, 0.06);
+      transition: transform 0.25s cubic-bezier(.34, 1.2, .64, 1), box-shadow 0.25s ease;
     }
-    .step .icon {
-      font-size: 36px;
+    .step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(234, 88, 12, 0.14);
+    }
+    .step-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
       line-height: 1;
-      margin-bottom: 16px;
-      display: block;
+      background: linear-gradient(135deg, #FDBA74 0%, #F97316 100%);
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.28);
     }
     .step h4 {
       font-family: 'Fraunces', Georgia, serif;
@@ -332,6 +377,20 @@
       font-size: 15px;
       margin: 0;
     }
+    /* Connecting dotted line between steps on desktop */
+    @media (min-width: 720px) {
+      .steps::before {
+        content: "";
+        position: absolute;
+        top: 64px;
+        left: 16%;
+        right: 16%;
+        height: 0;
+        border-top: 2px dotted rgba(249, 115, 22, 0.25);
+        z-index: 0;
+      }
+      .step { z-index: 1; }
+    }
 
     /* Trust strip */
     .trust {
@@ -344,20 +403,80 @@
 
     /* Footer */
     footer {
-      padding: 32px 0 48px;
-      text-align: center;
+      background: var(--cream);
+      border-top: 1px solid rgba(249, 115, 22, 0.18);
       color: var(--muted);
       font-size: 14px;
-      border-top: 1px solid var(--border);
     }
-    footer a {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 56px 0 36px;
+    }
+    .footer-col h5 {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dark);
+      margin: 0 0 16px;
+    }
+    .footer-brand img {
+      max-width: 130px;
+      height: auto;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .footer-brand p {
+      margin: 0;
+      max-width: 280px;
+      line-height: 1.55;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
       color: var(--muted);
-      margin-left: 16px;
-      transition: color .15s ease;
+      transition: color 0.15s ease;
     }
-    footer a:hover { color: var(--orange); }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-countries {
+      line-height: 1.6;
+    }
+    .footer-countries .flags {
+      font-size: 18px;
+      letter-spacing: 4px;
+      margin-top: 8px;
+      display: block;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 18px 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .footer-bottom a { transition: color 0.15s ease; }
+    .footer-bottom a:hover { color: var(--orange); }
+    @media (min-width: 720px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1.2fr; }
+    }
 
     /* Responsive */
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .header-inner { justify-content: space-between; }
+    }
     @media (min-width: 640px) {
       .steps { grid-template-columns: repeat(3, 1fr); }
     }
@@ -372,8 +491,9 @@
       .hero p.sub { font-size: 17px; }
       .section-title { font-size: 28px; }
       section { padding: 64px 0; }
-      .card { padding: 28px 24px; }
+      .card { padding: 32px 24px; }
       .price .amount { font-size: 36px; }
+      .footer-grid { padding: 44px 0 28px; }
     }
   </style>
 </head>
@@ -384,6 +504,11 @@
       <a href="#" class="logo" aria-label="Learn Spanish with Natives">
         <img id="logo-img" src="../assets/img/logo1.png" alt="Learn Spanish with Natives" />
       </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#levels">Pricing</a>
+        <a href="#">Teachers</a>
+      </nav>
       <a href="#" class="signin">Enroll now</a>
     </div>
   </header>
@@ -479,17 +604,17 @@
 
         <div class="steps">
           <div class="step">
-            <span class="icon" aria-hidden="true">🎯</span>
+            <div class="step-icon" aria-hidden="true">🎯</div>
             <h4>Pick your level</h4>
             <p>Choose Basic or Intermediate based on where you are today.</p>
           </div>
           <div class="step">
-            <span class="icon" aria-hidden="true">👩‍🏫</span>
+            <div class="step-icon" aria-hidden="true">👩‍🏫</div>
             <h4>Choose a teacher</h4>
             <p>Browse native teachers and pick the one that fits you best.</p>
           </div>
           <div class="step">
-            <span class="icon" aria-hidden="true">💬</span>
+            <div class="step-icon" aria-hidden="true">💬</div>
             <h4>Start learning</h4>
             <p>Book your first 1-on-1 class and begin speaking right away.</p>
           </div>
@@ -506,8 +631,29 @@
 
   <footer>
     <div class="container">
-      © 2026 Learn Spanish with Natives
-      <a href="#">Privacy</a>
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <img src="../assets/img/logo.png" alt="Learn Spanish with Natives" />
+          <p>1-on-1 Spanish lessons with native teachers from Spain and Latin America.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick links</h5>
+          <ul class="footer-links">
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#levels">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-countries">
+          <h5>Native teachers from</h5>
+          <p style="margin:0;">Spain, Mexico, Colombia, Argentina.</p>
+          <span class="flags" aria-hidden="true">🇪🇸 🇲🇽 🇨🇴 🇦🇷</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Learn Spanish with Natives</span>
+        <a href="#">Privacy</a>
+      </div>
     </div>
   </footer>
 
@@ -517,7 +663,7 @@
       var logoImg = document.getElementById('logo-img');
       var topSrc = '../assets/img/logo1.png';
       var scrolledSrc = '../assets/img/logo.png';
-      var threshold = 40;
+      var threshold = 80;
 
       // Preload the swap target so the switch is instant.
       var preload = new Image();

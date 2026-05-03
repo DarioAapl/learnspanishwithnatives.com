@@ -53,10 +53,19 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      transition: box-shadow .2s ease;
+      transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
     header.scrolled {
-      box-shadow: 0 4px 16px rgba(26, 26, 26, 0.08);
+      background: var(--orange);
+      border-bottom-color: transparent;
+      box-shadow: 0 4px 16px rgba(243, 146, 0, 0.25);
+    }
+    header.scrolled .signin {
+      background: #fff;
+      color: var(--orange);
+    }
+    header.scrolled .signin:hover {
+      background: var(--cream);
     }
     .header-inner {
       display: flex;
